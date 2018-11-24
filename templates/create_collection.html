@@ -1,4 +1,3 @@
-<h1>Create a new GIF collection</h1>
 {% extends 'index.html' %}
 
 {% block navigation %}
@@ -6,12 +5,20 @@
 {% endblock %}
 
 {% block main_content %}
+<h1>Create a new GIF collection</h1>
 
 <form action="" method="POST">
 	{{ form.hidden_tag() }}
-	{{ form.name.label }} {{ form.name() }}
-	{{ form.gif_picks.label }} {{ form.gif_picks() }}
-	{{ form.submit.label }}{{ form.submit() }}
+	<p>
+		{{ form.name.label }} <br>
+		{{ form.name() }} <br> <br>
+	</p>
+	<p>
+		{{ form.gif_picks.label }} <br>
+		{{ form.gif_picks() }} <br>
+	</p>
+
+	<p>{{ form.submit() }}</p>
 </form>
 
 {% endblock %}

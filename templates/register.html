@@ -1,17 +1,30 @@
-<h1>Sign up for a new user account</h1>
 {% extends 'index.html' %}
 
 {% block navigation %}
- {{ super() }}
+{{ super() }}
 {% endblock %}
 
-{% block main_content % }
-<form method="POST">
+{% block main_content %}
+<h1>Sign up for a new user account</h1>
+
+<form method="POST" novalidate>
 	{{ form.hidden_tag() }}
-	{{ form.email.label }} {{ form.email() }}
-	{{ form.username.label }} {{ form.username() }}
-    {{ form.password.label }} {{ form.password() }}
-    {{ form.password2.label }} {{ form.password2() }}
-	{{ form.submit.label }}{{ form.submit() }}
+	<p>
+	{{ form.username.label }}<br>
+	{{ form.username(size=32) }}
+	</p>
+	<p>
+	{{ form.email.label }}<br>
+	{{ form.email(size=32) }}
+	</p>
+	<p>
+	{{ form.password.label }}<br>
+	{{ form.password(size=32) }}
+	</p>
+	<p>
+	{{ form.password2.label }}<br>
+	{{ form.password2(size=32) }}
+	</p>
+	<p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
