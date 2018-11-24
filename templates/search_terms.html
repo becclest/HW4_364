@@ -2,13 +2,13 @@
 {% extends 'index.html' %}
 
 {% block navigation %}
-    {{ super() }}
+{{ super() }}
 {% endblock %}
 
 {% block main_content %}
-    <ul>
+<ul>
     {% for t in all_terms %}
-        <li><a href="{{ url_for('search_results',search_term=t.term) }}">{{ t.term }}</a> (Click to see the results from that search)</li><br>
+    <li><a href="{{ url_for('search_results',search_term=t.term) }}">{{ t.term }}</a> (Click to see the results from that search)</li><br>
     {% endfor %}
-    </ul>
+</ul>
 {% endblock %}

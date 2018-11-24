@@ -3,15 +3,15 @@
 {% extends 'index.html' %}
 
 {% block navigation %}
- {{ super() }}
+{{ super() }}
 {% endblock %}
 
 {% block main_content %}
 
 <ul>
-{% for c in collections %}
+    {% for c in collections %}
     <li><a href="http://localhost:5000/collection/{{ c.id }}">{{ c.name }}</a></li>
-{% endfor %}
+    {% endfor %}
 </ul>
 
 {% endblock %}
